@@ -1711,6 +1711,7 @@ function! vimwiki#base#follow_link(split, ...) abort
 
     let current_tab_page = tabpagenr()
 
+    let lnk = substitute(lnk, "%20", " ", "g")
     call vimwiki#base#open_link(cmd, lnk)
 
     if !move_cursor_to_new_window
